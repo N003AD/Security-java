@@ -30,5 +30,8 @@ public class LoginServlet extends HttpServlet {
 		String mdp = req.getParameter("password");
 		
 		log.info("Votre adresse email est: {} et votre mot de passe est: {} ", email, mdp);
+		
+		req.getSession().setAttribute("username", email);
+		resp.sendRedirect("welcome");
 	}
 }
